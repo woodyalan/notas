@@ -1,0 +1,104 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    box-shadow: 2px 2px 5px rgba(33, 33, 33, .3);
+}
+
+.open-note {
+    color: inherit;
+    text-decoration: none;
+}
+
+.open-note:hover {
+    color: inherit;
+}
+
+.open-note:hover .note {
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, .7);
+    transform: scale(1.1);
+}
+
+.modal-content {
+    background-color: #FFC107;
+    border: #FFC107;
+    border-radius: 0;
+}
+
+.modal-body {
+    padding: .2rem 1rem 1rem 1rem;
+}
+
+.modal-header {
+    border-color: #ffc107;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 1rem 1rem .2rem 1rem;
+}
+
+.modal-footer {
+    border-color: #ffc107;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.note {
+    border: 1px solid #FFC107;
+    padding: 1em;
+    margin-top: 1.2em;
+    box-shadow: 2px 2px 5px rgba(33, 33, 33, .3);
+    transition: transform .15s linear;
+    min-height: 250px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.note .form-check-input {
+    background-color: #FFC107;
+}
+
+.note .form-check-input:checked {
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+.form-control {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+    padding: .375rem 0;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    box-shadow: none;
+}
+
+#noteBoard {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#btnAdd {
+    float: right;
+    bottom: 10px;
+    right: 10px;
+    position: fixed;
+}
+
+.login {
+    text-align: center;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
