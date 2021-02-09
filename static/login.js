@@ -4,11 +4,8 @@ let login = function () {
     type: 'POST',
     dataType: 'json',
     data: $('#frmLogin').serialize(),
-    beforeSend: function () {
-      console.log("waiting");
-    },
     success: function (data) {
-      console.log("success");
+      window.location = '/';
     }
   });
 }

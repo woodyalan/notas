@@ -1,51 +1,30 @@
-let loadNote = function (id = null) {
+let loadNotes = function () {
   $.ajax({
-    url: 'path/to/file',
+    url: 'view/list.php',
     type: 'POST',
-    dataType: 'json',
-    data: {
-      id
-    },
-    beforeSend: function () {
-      console.log("waiting");
-    },
+    dataType: 'html',
     success: function (data) {
-      console.log("success");
+      $('#noteBoard').html(data);
     }
   });
 }
 
-let saveNote = function (nota) {
+let saveNote = function () {
   $.ajax({
-    url: 'path/to/file',
+    url: 'controller/save.php',
     type: 'POST',
-    dataType: 'json',
+    dataType: 'html',
     data: $('#frmNota').serialize(),
-    beforeSend: function () {
-      console.log("waiting");
-    },
     success: function (data) {
-      console.log("success");
+      // loadNotes();
     }
   });
 }
 
 $(function () {
-  $('.open-note').click(function (e) {
-    e.preventDefault();
-  });
-
   $('#frmNota').submit(function (e) {
     e.preventDefault();
 
-    saveNote($(this).serializeArray());
-  });
-
-  const noteModal = document.getElementById('noteModal');
-
-  noteModal.addEventListener('show.bs.modal', function (e) {
-    const id = $(e.relatedTarget).data('id');
-
-    loadNote(id);
+    // saveNote();
   });
 });
