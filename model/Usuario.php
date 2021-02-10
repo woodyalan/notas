@@ -45,6 +45,19 @@ class Usuario
         $this->id = $this->conn->insert_id();
     }
 
+    public static function autenticar($email, $senha)
+    {
+        $c = new \lib\MySQL();
+
+        $sql = "SELECT * FROM usuario WHERE email = '$email'";
+
+        $q = $c->query($sql);
+
+        $obj = $c->fetch_object($q);
+
+        return Hash::compararCriptografado($obj->senha, $senha) ? $obj : false;
+    }
+
     /**
      * @return mixed
      */

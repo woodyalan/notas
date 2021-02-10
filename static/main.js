@@ -16,15 +16,17 @@ let saveNote = function () {
     dataType: 'html',
     data: $('#frmNota').serialize(),
     success: function (data) {
-      // loadNotes();
+      loadNotes();
     }
   });
 }
 
 $(function () {
+  loadNotes();
+
   $('#frmNota').submit(function (e) {
     e.preventDefault();
 
-    // saveNote();
+    saveNote();
   });
 });

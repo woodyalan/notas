@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!$_SESSION['notas']['usuario']) {
+    header('Location: login.html');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -53,17 +61,7 @@
             data-bs-target="#noteModal">Nova Nota</button>
 
     <div id="noteBoard">
-        <div class="row">
-            <div class="col-md-3">
-                <a class="open-note">
-                    <div class="note bg-warning">
-                        <h3 class="title">Título da Nota</h3>
 
-                        <p class="description">Descrição da nota</p>
-                    </div>
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 

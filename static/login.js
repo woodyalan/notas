@@ -1,11 +1,15 @@
 let login = function () {
   $.ajax({
-    url: 'path/to/file',
+    url: 'controller/login.php',
     type: 'POST',
-    dataType: 'json',
+    dataType: 'html',
     data: $('#frmLogin').serialize(),
     success: function (data) {
-      window.location = '/';
+      if(data != '') {
+        $('#loginResponse').html(data);
+      } else {
+        window.location = '/';
+      }
     }
   });
 }
